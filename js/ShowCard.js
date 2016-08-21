@@ -11,8 +11,13 @@ const ShowCard = (props) => (
   </div>
 )
 
+const { string } = React.PropTypes
+
 ShowCard.propTypes = {
-  show: React.PropTypes.object.isRequired
+  title: string.isRequired,
+  description: string.isRequired,
+  year: string.isRequired,
+  poster: string.isRequired
 }
 
 module.exports = ShowCard
