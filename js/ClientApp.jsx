@@ -7,14 +7,18 @@ const Search = require('./Search')
 const Details = require('./Details')
 const { shows } = require('../public/data')
 
-const App = () => (
-  <Router history={hasHistory}>
-    <Route path='/' component={Layout} >
-      <IndexRoute component={Landing} />
-      <Route path='/search' component={Search} shows={shows} />
-      <Route path='/details/:id' component={Details} />
-    </Route>
-  </Router>
-)
+const App = React.createClass({
+  render() {
+    return (
+      <Router history={hasHistory}>
+        <Route path='/' component={Layout} >
+          <IndexRoute component={Landing} />
+          <Route path='/search' component={Search} shows={shows} />
+          <Route path='/details/:id' component={Details} />
+        </Route>
+      </Router>
+    )
+  }
+})
 
 ReactDOM.render(<App />, document.getElementById('app'))
