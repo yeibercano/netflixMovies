@@ -4,7 +4,7 @@ const { func, bool, string } = React.PropTypes
 
 const Header = React.createClass({
  
-  propTypes = {
+  propTypes: {
     handleSearchTermChange: func, 
     showSearch: bool,
     searchTerm: string
@@ -35,7 +35,7 @@ const Header = React.createClass({
             svideo
           </Link>  
         </h1>
-       {utilSpace}
+        {utilSpace}
       </header>
     )
   }

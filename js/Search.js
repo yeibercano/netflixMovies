@@ -1,7 +1,7 @@
 const React = require('react')
 const ShowCard = require('./ShowCard')
-const { object } = React.PropTypes
 const Header = require('./Header')
+const { object } = React.PropTypes
 
 const Search = React.createClass({
   getInitialState () {
@@ -13,7 +13,6 @@ const Search = React.createClass({
     route: object
   },
   handleSearchTermChange(searchTerm) {
-    e.preventDefault()
     this.setState({ searchTerm })
   },
 
@@ -23,7 +22,7 @@ const Search = React.createClass({
         <Header 
           handleSearchTermChange={this.handleSearchTermChange}
           searchTerm={this.state.searchTerm} 
-          showeSearch 
+          showSearch 
         />
         <div className="shows">
           {this.props.route.shows
