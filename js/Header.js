@@ -1,17 +1,29 @@
 const React = require('react')
 const { Link } = require('react-router')
+const { func, bool, string } = React.PropTypes
 
-class Header extends React.Component {
+const Header = React.createClass({
+ 
+  propTypes = {
+    handleSearchTermChange: func, 
+    showSearch: bool,
+    searchTerm: string
+  },
+
+  handleSearchTermEvent (e) {
+    this.props.handleSearchTermChange(e.target.value)
+  },
 
   render () {
     let utilSpace
     if (this.props.showSearch) {
-      utilSpace = <input value={this.state.searchTerm} onChange={this.handleSearchTermEvent} type="text" placeholder='search' className="search-input" />
+      utilSpace = <input type="text" className="search-input" placeholder='search' value={this.props.searchTerm} 
+      onChange={this.handleSearchTermEvent} />
     } else {
       utilSpace = (
         <h2 className="header-back">
-          <Link to='/search' className='brand-link'>
-            back
+          <Link to='/search'>
+            Back
           </Link> 
         </h2>
       )
@@ -27,6 +39,6 @@ class Header extends React.Component {
       </header>
     )
   }
-}
+})
 
 module.exports = Header
