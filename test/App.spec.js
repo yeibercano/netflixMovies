@@ -16,5 +16,8 @@ describe('<Search />', () => {
     const wrapper = shallow(<Search />)
     expect(wrapper.find(ShowCard).length).to.equal(shows.length)
   })
- 
+  it('filter new state', () => {
+    const wrapper = shallow(<Search />)
+    expect(wrapper.find(ShowCard).length).to.equal(shows.length)
+  })
 })
