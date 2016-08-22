@@ -12,13 +12,13 @@ const App = React.createClass({
     const showArray = shows.filter((show) => show.imdbID === nextState.params.id)
 
     if (showArray.length < 1) {
-      return replace('/') //send them to homepage, but 404 would be better
+      return replace('/') // send them to homepage, but 404 would be better
     }
 
     Object.assign(nextState.params, showArray[0])
     return nextState
   },
-  render() {
+  render () {
     return (
       <Router history={hasHistory}>
         <Route path='/' component={Layout} >
