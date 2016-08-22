@@ -1,6 +1,6 @@
 const React = require('react')
 const ShowCard = require('./ShowCard')
-const { arrayOf, object } = React.PropTypes
+const {  object } = React.PropTypes
 
 const Search = React.createClass({
   getInitialState() {
@@ -9,7 +9,7 @@ const Search = React.createClass({
     }
   },
   propTypes: {
-    shows: arrayOf(object)
+    route: object
   },
   handleSearchTermEvent(e) {
     e.preventDefault()
@@ -29,7 +29,7 @@ const Search = React.createClass({
           className="search-input"/>
         </header>
         <div className="shows">
-          {this.props.shows
+          {this.props.route.shows
             .filter((show) => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >=0)
             .map((show) => (
             <ShowCard {...show} key={show.imdbID} />
