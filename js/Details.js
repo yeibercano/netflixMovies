@@ -9,7 +9,7 @@ class Details extends React.Component {
     return(
       <div className="container">
         <pre><code>
-          {JSON.stringify(this.props, null, 4)}
+          {JSON.stringify(this.props.params, null, 4)}
         </code></pre>
       </div>    
     )

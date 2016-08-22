@@ -8,13 +8,23 @@ const Details = require('./Details')
 const { shows } = require('../public/data')
 
 const App = React.createClass({
+  assignShow (nextState, replace) {
+    const showArray = shows.filter((show) => show.imdbID === nextState.params.id)
+
+    if (showArray.length < 1) {
+      return replace('/') //send them to homepage, but 404 would be better
+    }
+
+    Object.assign(nextState.params, showArray[0])
+    return nextState
+  },
   render() {
     return (
       <Router history={hasHistory}>
         <Route path='/' component={Layout} >
           <IndexRoute component={Landing} />
           <Route path='/search' component={Search} shows={shows} />
-          <Route path='/details/:id' component={Details} />
+          <Route path='/details/:id' component={Details} onEnter={this.assignShow} />
         </Route>
       </Router>
     )
