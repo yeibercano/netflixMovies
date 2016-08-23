@@ -3,7 +3,8 @@
 This app was constructed with Brian Holt workshop. We explore React from the its most vanilla form to server side rendering passing by stateless components, ES6 components, redux, redux devTools, life cycles and much more.
 
 [Workshop info][workshop]
-[Repo][gh-page]
+
+[Guide][gh-page]
 
 ## License
 
