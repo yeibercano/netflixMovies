@@ -17,7 +17,7 @@ const rootReducer = (state = initialState, action) => {
   }
 }
 
-const store = redux.createStore(rootReducer)
+const store = redux.createStore(rootReducer, initialState, redux.compose(typeof window === 'object' && typeof window.deveToolsExtension !== 'undefined' ? window.deveToolsExtension() : (f) => f ))
 
 const mapStateToProps = (state) => {
   return { searchTerm: state.searchTerm }
