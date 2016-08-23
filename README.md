@@ -1,13 +1,12 @@
-# A Complete Intro to React
+# Netflix Movies
 
-Welcome to a complete intro to React! The site actual workshop material for this repo can be found [here][gh-page]. On the master branch you will find the completed project. On the start branch you will find the barebones boilerplater of the project designed to help you get started.
+This app was constructed with Brian Holt workshop. We explore React from the its most vanilla form to server side rendering passing by stateless components, ES6 components, redux, redux devTools, life cycles and much more.
 
-## Contributing
-
-Please contribute, file issues, and make PRs. More than anything I'm sure there are typos abounding.
+[Workshop info][workshop]
+[Repo][gh-page]
 
 ## License
 
 MIT
-
+[workshop]: https://frontendmasters.com/courses/react-intro/
 [gh-page]: http://btholt.github.io/complete-intro-to-react/
