@@ -1,7 +1,7 @@
 const React = require('react')
 const Landing = require('./Landing')
 const Layout = require('./Layout')
-const { Router, Route, hashHistory, IndexRoute } = require('react-router')
+const { Router, Route, browserHistory, IndexRoute } = require('react-router')
 const Search = require('./Search')
 const Details = require('./Details')
 const { store } = require('./Store')
@@ -11,7 +11,7 @@ const App = React.createClass({
   render () {
     return (
       <Provider store={store}>
-        <Router history={hashHistory}>
+        <Router history={browserHistory}>
           <Route path='/' component={Layout}>
             <IndexRoute component={Landing} />
             <Route path='/search' component={Search} />
