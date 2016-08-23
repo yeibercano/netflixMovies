@@ -2,7 +2,7 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const Landing = require('./Landing')
 const Layout = require('./Layout')
-const { Router, Route, hasHistory, IndexRoute } = require('react-router')
+const { Router, Route, hashHistory, IndexRoute } = require('react-router')
 const Search = require('./Search')
 const Details = require('./Details')
 const { shows } = require('../public/data')
@@ -23,7 +23,7 @@ const App = React.createClass({
   render () {
     return (
       <Provider store={store}>
-        <Router history={hasHistory}>
+        <Router history={hashHistory}>
           <Route path='/' component={Layout}>
             <IndexRoute component={Landing} />
             <Route path='/search' component={Search} shows={shows} />
