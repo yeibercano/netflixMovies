@@ -5,7 +5,8 @@ module.exports = {
   entry: './js/BrowserEntry.jsx',
   output: {
     path: path.join(__dirname, '/public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/public/'
   },
   resolve: {
     //start from left to write
@@ -14,7 +15,7 @@ module.exports = {
   stats: {
     colors: true,
     reasons: true, // tells what happen
-    chuncks: false
+    chuncks: true
   },
   module: {
     preLoaders: [
