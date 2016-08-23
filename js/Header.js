@@ -4,9 +4,8 @@ const { func, bool, string } = React.PropTypes
 const { connector } = require('./Store')
 
 const Header = React.createClass({
- 
   propTypes: {
-    setSearchTerm: func, 
+    setSearchTerm: func,
     showSearch: bool,
     searchTerm: string
   },
@@ -18,14 +17,13 @@ const Header = React.createClass({
   render () {
     let utilSpace
     if (this.props.showSearch) {
-      utilSpace = <input type="text" className="search-input" placeholder='search' value={this.props.searchTerm} 
-      onChange={this.handleSearchTermEvent} />
+      utilSpace = <input type="text" className="search-input" placeholder='search' value={this.props.searchTerm} onChange={this.handleSearchTermEvent} />
     } else {
       utilSpace = (
         <h2 className="header-back">
           <Link to='/search'>
             Back
-          </Link> 
+          </Link>
         </h2>
       )
     }
@@ -34,7 +32,7 @@ const Header = React.createClass({
         <h1 className="brand">
           <Link to='/' className='brand-link'>
             svideo
-          </Link>  
+          </Link>
         </h1>
         {utilSpace}
       </header>

@@ -13,14 +13,14 @@ const rootReducer = (state = initialState, action) => {
       Object.assign(newState, state, {searchTerm: action.value})
       return newState
     default:
-      return state 
+      return state
   }
 }
 
 const store = redux.createStore(rootReducer)
 
-const mapStateToProps = (state) => { 
- return { searchTerm: state.searchTerm }
+const mapStateToProps = (state) => {
+  return { searchTerm: state.searchTerm }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -33,5 +33,3 @@ const mapDispatchToProps = (dispatch) => {
 const connector = reactRedux.connect(mapStateToProps, mapDispatchToProps)
 
 module.exports = { connector, store }
-
-
