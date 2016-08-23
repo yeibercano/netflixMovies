@@ -6,6 +6,8 @@ const { Router, Route, hasHistory, IndexRoute } = require('react-router')
 const Search = require('./Search')
 const Details = require('./Details')
 const { shows } = require('../public/data')
+const { store } = require('./Store')
+const { Provider } = require('react-redux')
 
 const App = React.createClass({
   assignShow (nextState, replace) {
@@ -20,13 +22,15 @@ const App = React.createClass({
   },
   render () {
     return (
-      <Router history={hasHistory}>
-        <Route path='/' component={Layout} >
-          <IndexRoute component={Landing} />
-          <Route path='/search' component={Search} shows={shows} />
-          <Route path='/details/:id' component={Details} onEnter={this.assignShow} />
-        </Route>
-      </Router>
+      <Provider store={store}>
+        <Router history={hasHistory}>
+          <Route path='/' component={Layout}>
+            <IndexRoute component={Landing} />
+            <Route path='/search' component={Search} shows={shows} />
+            <Route path='/details/:id' component={Details} onEnter={this.assignShow} />
+          </Route>
+        </Router>
+      </Provider>
     )
   }
 })
