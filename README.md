@@ -1,6 +1,6 @@
 # Netflix Movies
 
-This app was constructed with Brian Holt workshop. We explore React from the its most vanilla form to server side rendering passing by stateless components, ES6 components, redux, redux devTools, life cycles and much more.
+This app was constructed with Brian Holt workshop. We explore React from its most vanilla form to server side rendering passing by stateless components, ES6 components, redux, redux devTools, life cycles, routing, eslint and much more.
 
 [Workshop info][workshop]
 
